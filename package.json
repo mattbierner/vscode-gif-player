@@ -5,6 +5,10 @@
 	"publisher": "bierner",
 	"version": "0.0.1",
 	"icon": "design/logo.png",
+	"galleryBanner": {
+		"color": "#353535",
+		"theme": "dark"
+	},
 	"repository": {
 		"url": "https://github.com/mattbierner/vscode-gif-player.git"
 	},
