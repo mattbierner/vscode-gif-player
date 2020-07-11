@@ -3,7 +3,7 @@
 	"displayName": "Gif Player",
 	"description": "Add a play/pause button and a scrubber for controlling gif playback.",
 	"publisher": "bierner",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"icon": "design/logo.png",
 	"galleryBanner": {
 		"color": "#353535",
