@@ -1,0 +1,51 @@
+html, body, main {
+    height: 100%;
+}
+
+body {
+    padding: 0;
+}
+
+main {
+    width: 100vw;
+    height: 100vh;
+}
+
+.frame-slider {
+    -webkit-appearance: none;
+    margin-bottom: 0.6em;
+}
+
+.frame-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: 1px solid #000000;
+    height: 20px;
+    width: 6px;
+    background: #ffffff;
+    cursor: pointer;
+    margin-top: -10px;
+}
+
+.frame-slider::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 4px;
+    cursor: pointer;
+    background: var(--vscode-checkbox-foreground);
+    border: 0.5px solid var(--vscode-checkbox-border);
+}
+
+@keyframes codicon-spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.codicon-play::before { content: '\eb2c'; }
+.codicon-pause::before { content: '\ead1'; }
+.codicon-debug-step-back::before { content: '\eb8f'; }
+.codicon-debug-step-over::before { content: '\ead6'; }
+
+.codicon-loading::before { content: '\eb19'; }
+.codicon-loading {
+    animation: codicon-spin 1.5s steps(30) infinite;
+}

@@ -1,0 +1,125 @@
+{
+	"name": "gif-player",
+	"displayName": "Gif Player",
+	"description": "Add a play/pause button and a scrubber for controlling gif playback.",
+	"publisher": "bierner",
+	"version": "0.0.1",
+	"icon": "design/logo.png",
+	"repository": {
+		"url": "https://github.com/mattbierner/vscode-gif-player.git"
+	},
+	"bugs": {
+		"url": "https://github.com/mattbierner/vscode-gif-player/issues"
+	},
+	"engines": {
+		"vscode": "^1.47.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onCustomEditor:gifPlayer.player",
+		"onCommand:gifPlayer.togglePlay"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"customEditors": [
+			{
+				"viewType": "gifPlayer.player",
+				"displayName": "Gif Player",
+				"priority": "default",
+				"selector": [
+					{
+						"filenamePattern": "*.gif"
+					}
+				]
+			}
+		],
+		"commands": [
+			{
+				"command": "gifPlayer.togglePlay",
+				"title": "Toggle Playing",
+				"category": "Gif Player",
+				"enablement": "gifPlayerActive"
+			},
+			{
+				"command": "gifPlayer.nextFrame",
+				"title": "Next Frame",
+				"category": "Gif Player",
+				"enablement": "gifPlayerActive"
+			},
+			{
+				"command": "gifPlayer.previousFrame",
+				"title": "Previous Frame",
+				"category": "Gif Player",
+				"enablement": "gifPlayerActive"
+			}
+		],
+		"keybindings": [
+			{
+				"command": "gifPlayer.togglePlay",
+				"key": "space"
+			},
+			{
+				"command": "gifPlayer.nextFrame",
+				"key": "right"
+			},
+			{
+				"command": "gifPlayer.previousFrame",
+				"key": "left"
+			}
+		],
+		"menus": {
+			"commandPalette": [
+				{
+					"command": "gifPlayer.togglePlay",
+					"when": "gifPlayerActive"
+				},
+				{
+					"command": "gifPlayer.nextFrame",
+					"when": "gifPlayerActive"
+				},
+				{
+					"command": "gifPlayer.previousFrame",
+					"when": "gifPlayerActive"
+				}
+			]
+		},
+		"configuration": [
+			{
+				"title": "Gif Player",
+				"properties": {
+					"gifPlayer.autoPlay": {
+						"type": "boolean",
+						"default": true,
+						"description": "Should gifs be automatically played?"
+					}
+				}
+			}
+		]
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile ; npm run build-preview:prod",
+		"compile": "tsc -p ./",
+		"lint": "eslint src --ext ts ; eslint preview --ext ts",
+		"watch": "tsc -watch -p ./",
+		"build-preview": "cd preview ; webpack",
+		"build-preview:prod": "cd preview ; webpack --env.production"
+	},
+	"devDependencies": {
+		"@types/glob": "^7.1.1",
+		"@types/node": "^13.11.0",
+		"@types/omggif": "^1.0.1",
+		"@types/vscode": "^1.47.0",
+		"@typescript-eslint/eslint-plugin": "^2.30.0",
+		"@typescript-eslint/parser": "^2.30.0",
+		"eslint": "^6.8.0",
+		"glob": "^7.1.6",
+		"omggif": "^1.0.10",
+		"preact": "^10.4.5",
+		"ts-loader": "^8.0.0",
+		"typescript": "^3.9.6",
+		"webpack": "^4.43.0",
+		"webpack-cli": "^3.3.12"
+	}
+}
