@@ -39,4 +39,4 @@ By default, the Gif Player editor is used for any gif you open. You can disable 
 
 Then you can use the `View: Reopen Editor With` command to switch open individual gifs using Gif Player.
 
-![]
+![Using reopen with](documentation/reopen-with.png)
