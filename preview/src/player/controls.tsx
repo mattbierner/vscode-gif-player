@@ -106,7 +106,7 @@ export function Controls(props: {
                 <ControlButton
                     className='playButton'
                     title={props.playing ? "Pause" : "Play"}
-                    icon={props.playing ? 'codicon-play' : 'codicon-pause'}
+                    icon={props.playing ? 'codicon-pause' : 'codicon-play'}
                     onClick={() => {
                         props.updatePlaying(!props.playing);
                     }} />
