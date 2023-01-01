@@ -121,9 +121,9 @@
 		"glob": "^7.1.6",
 		"omggif": "^1.0.10",
 		"preact": "^10.4.5",
-		"ts-loader": "^8.0.0",
+		"ts-loader": "^8.4.0",
 		"typescript": "^3.9.6",
-		"webpack": "^4.43.0",
-		"webpack-cli": "^3.3.12"
+		"webpack": "^5.75.0",
+		"webpack-cli": "^5.0.1"
 	}
 }
